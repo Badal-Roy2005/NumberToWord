@@ -34,5 +34,5 @@ This is a simple JavaScript-based web application that converts numeric values i
 ### 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/number-to-words-indian.git
-cd number-to-words-indian
+git clone https://github.com/Badal-Roy2005/NumberToWord.git
+
