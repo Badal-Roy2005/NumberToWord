@@ -24,7 +24,7 @@ This is a simple JavaScript-based web application that converts numeric values i
 ## 🛠️ Tech Stack
 
 - HTML
-- CSS (optional)
+- CSS 
 - JavaScript
 
 ---
