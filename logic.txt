@@ -1,7 +1,0 @@
-create word maps for ones , tens and thousands
-
-divide number in chuncks of three
-
-convert each three digit into words
-
-combine them with scale words

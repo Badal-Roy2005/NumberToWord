@@ -40,6 +40,18 @@ const submit = document.getElementById("submit");
 submit.addEventListener("click", () => {
   number = input.value;
 
+  if ((number === "")) {
+    alert("Enter a number first!") 
+    return;
+  }
+    
+
+  if((number < 0)) 
+    {
+      alert("Invalid Number!")
+      return;
+    } 
+
   let w = convertNumToVal(number);
 
   output.innerText = w;
@@ -49,6 +61,14 @@ function convertNumToVal(number) {
   if (number === 0) return "Zero";
   if (number in numbers) return numbers[number];
   let word = "";
+  if (number >= 1000000000000) {
+  word += convertNumToVal(Math.floor(number / 1000000000000)) + " Kharab ";
+  number %= 1000000000000;
+}
+if (number >= 10000000000) {
+  word += convertNumToVal(Math.floor(number / 10000000000)) + " Arab ";
+  number %= 10000000000;
+}
   if (number >= 10000000) {
     word = word + convertNumToVal(Math.floor(number / 10000000)) + " Crore ";
 
@@ -73,24 +93,18 @@ function convertNumToVal(number) {
   }
 
   // more digits
-  if (number > 20) {
-    if (word != "") {
-      word = word + " and ";
-    }
+  if (number > 0) {
+    if (word !== "") word += " and ";
 
-    word += convertNumToVal(Math.floor(number / 10) * 10);
-
-    number %= 10;
-
-    if (number % 10 > 0) {
-      word += "-" + numbers[number];
+    if (number > 20) {
+      word += numbers[Math.floor(number / 10) * 10];
+      if (number % 10 > 0) {
+        word += "-" + numbers[number % 10];
+      }
+    } else {
+      word += numbers[number];
     }
-  } else {
-    if (word !== "") {
-      word += " and ";
-    }
-    word += numbers[number];
-  }
+  } 
 
   return word.trim();
 }
